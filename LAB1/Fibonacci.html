@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        n=parseInt(prompt("Enter a number:"))
+        a = 0, b = 1, next;
+
+        document.write("Fibonacci Series: <br>");
+
+        for (i = 1; i <= n; i++) {
+            document.write(a + " ");
+            next = a + b;
+            a = b;
+            b = next;
+        }
+    </script>
+</body>
+</html>
