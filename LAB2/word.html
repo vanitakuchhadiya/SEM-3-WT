@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        ones = ["","one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+        teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
+                    "sixteen", "seventeen", "eighteen", "nineteen"];
+        tens = ["", "", "twenty", "thirty", "forty", "fifty", 
+                    "sixty", "seventy", "eighty", "ninety"];
+
+        n= parseInt(prompt("Enter number (1 to 999):"));
+        word = "";
+        if(n<=10){
+            document.write("in words:"+ones[n]);
+        }
+        else if(n>10 && n<20){
+            document.write("in words:"+teens[n- 10]);
+        }
+        else if(n >= 20 && n < 100){
+            document.write("In words:"+tens[Math.floor(n / 10)] + (n % 10 !== 0 ? " " + ones[n % 10] : ""))
+        }
+        else { 
+        word = ones[Math.floor(n / 100)] + " hundred";
+        rem = n % 100;
+        if(rem !== 0){
+            if(rem < 10){
+                word += " " + ones[rem];
+            }
+            else if(rem >= 10 && rem < 20){
+                word += " " + teens[rem - 10];
+            }
+            else {
+                word += " " + tens[Math.floor(rem / 10)] + (rem % 10 !== 0 ? " " + ones[rem % 10] : "");
+            }
+        }
+        document.write("In words:"+word);
+    }
+
+    </script>
+</body>
+</html>
