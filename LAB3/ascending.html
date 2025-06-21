@@ -1,0 +1,30 @@
+<!-- WAP to read an array from the user and sort them in ascending order -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sort Array</title>
+</head>
+
+<body>
+    <script>
+        n = parseInt(prompt("Enter how many elements to sort:"));
+        a = new Array(n);
+
+        for (let i = 0; i < a.length; i++) {
+            a[i] = parseInt(prompt("Enter element " + (i + 1)));
+        }
+
+        for (let i = 0; i < n; i++) {
+            for (let j = i + 1; j < n; j++) {
+                if (a[i] > a[j]) {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        document.write("<h3>The array is sorted as:</h3>"+a.join(", "));
+    </script>
+</body>
+</html>
